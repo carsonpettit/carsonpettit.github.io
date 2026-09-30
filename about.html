@@ -7,7 +7,7 @@
   <meta name="description" content="About Carson Pettit, UX Interactive Design graduate from James Madison University, Web Designer &amp; Developer at Chaffin Gallery, plus LinkedIn and résumé.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
 /* Carson Pettit — Portfolio
    Edit the tokens below to restyle the whole site. */
@@ -588,6 +588,36 @@ video.demo { width: 100%; border-radius: 10px; border: 1px solid var(--line); ba
 .file-view { scroll-margin-top: 72px; }
 @media (max-width: 600px) { .bar-next { font-size: 12px; padding: 6px 10px; } .bar-next { max-width: 55%; overflow: hidden; text-overflow: ellipsis; } }
 
+/* Title intro: "stuff ive done" -> double tap, select, type "UX Case Studies" */
+.tt.sel { background: var(--select); color: var(--select-ink); border-radius: 4px; box-shadow: 0 0 0 3px var(--select); }
+.tt-caret { display: inline-block; width: 2px; height: 1.05em; background: currentColor; margin-left: 2px; vertical-align: -3px; animation: ttblink 1s steps(1) infinite; }
+@keyframes ttblink { 50% { opacity: 0; } }
+.tap-cursor { position: absolute; left: 0; top: 0; pointer-events: none; z-index: 6; opacity: 0; transition: transform .65s cubic-bezier(.3,.7,.25,1), opacity .3s; }
+.tap-cursor.on { opacity: 1; }
+.tap-cursor svg { display: block; transform-origin: 20% 10%; transition: transform .1s; filter: drop-shadow(0 2px 3px rgba(23,58,69,.25)); }
+.tap-cursor.press svg { transform: scale(.82); }
+.tap-ring { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; border: 2px solid var(--accent); pointer-events: none; z-index: 5; animation: tapring .5s ease-out forwards; }
+@keyframes tapring { from { transform: scale(.3); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
+
+/* Make my role impossible to miss */
+.did { background: #FFFFFF; border: 1px solid #D5DDE0; border-left: 5px solid #3F7C85; border-radius: 14px; padding: clamp(20px, 3vw, 30px); margin: -8px 0 28px; }
+.did h2 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #3F7C85; font-weight: 700; margin-bottom: 14px; }
+.did ul { list-style: none; display: grid; grid-template-columns: 1fr 1fr; gap: 10px 32px; padding: 0; margin: 0; }
+.did li { position: relative; padding-left: 26px; font-size: 15.5px; line-height: 1.5; }
+.did li::before { content: "✓"; position: absolute; left: 0; top: 0; color: #3F7C85; font-weight: 700; }
+.did li b { font-weight: 700; color: var(--ink); }
+@media (max-width: 700px) { .did ul { grid-template-columns: 1fr; } }
+.mine { display: flex; gap: 12px; align-items: baseline; background: var(--pale); border-radius: 10px; padding: 12px 16px; margin: 4px 0 22px; font-size: 15px; line-height: 1.5; }
+.mine b { flex-shrink: 0; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #FFFFFF; background: #3F7C85; padding: 3px 8px; border-radius: 999px; }
+.i-did { margin-top: 12px; padding-top: 12px; border-top: 1px dashed #C9D6DA; font-size: 14.5px; }
+.i-did b, .decision b { display: block; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #3F7C85; margin-bottom: 3px; }
+.decision { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid #D5DDE0; border-radius: 12px; overflow: hidden; margin: 10px 0; background: #FFFFFF; }
+.decision > span { padding: 14px 18px; font-size: 15px; line-height: 1.5; }
+.decision .d-l { background: color-mix(in srgb, var(--pale) 55%, #FFFFFF); }
+.decision .d-r { border-left: 1px solid #D5DDE0; }
+.decision .d-l b { color: var(--muted); }
+@media (max-width: 600px) { .decision { grid-template-columns: 1fr; } .decision .d-r { border-left: 0; border-top: 1px solid #D5DDE0; } }
+
 </style>
 </head>
 <body>
@@ -622,7 +652,7 @@ video.demo { width: 100%; border-radius: 10px; border: 1px solid var(--line); ba
       <div class="contact-links">
         <div class="clink">
           <span>LinkedIn</span>
-          <a href="https://www.linkedin.com/in/carson-pettit-19a837267/" target="_blank" rel="noopener">Let’s connect! <i>↗</i></a>
+          <a href="https://www.linkedin.com/in/carsonpettit" target="_blank" rel="noopener">Let’s connect! <i>↗</i></a>
         </div>
         <div class="clink">
           <span>Résumé</span>
@@ -665,7 +695,7 @@ video.demo { width: 100%; border-radius: 10px; border: 1px solid var(--line); ba
         <h4>Connect</h4>
         <ul>
           <li><a href="mailto:carsonkpettit@gmail.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/carson-pettit-19a837267/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/carsonpettit" target="_blank" rel="noopener">LinkedIn ↗</a></li>
         </ul>
       </div>
     </div>

@@ -578,13 +578,13 @@ video.demo { width: 100%; border-radius: 10px; border: 1px solid var(--line); ba
 @media (max-width: 600px) { .bar-next { font-size: 12px; padding: 6px 10px; } .bar-next { max-width: 55%; overflow: hidden; text-overflow: ellipsis; } }
 
 /* Title intro: "stuff ive done" -> double tap, select, type "UX Case Studies" */
-.tt.sel { background: var(--select); color: var(--select-ink); border-radius: 4px; box-shadow: 0 0 0 3px var(--select); }
-.tt-caret { display: inline-block; width: 2px; height: 1.05em; background: currentColor; margin-left: 2px; vertical-align: -3px; animation: ttblink 1s steps(1) infinite; }
-@keyframes ttblink { 50% { opacity: 0; } }
+.tt.sel { background: var(--select); color: var(--select-ink); border-radius: 4px; }
+.tt.typing { border-right: 2px solid currentColor; padding-right: 2px; animation: ttblink 1s steps(1) infinite; }
+@keyframes ttblink { 50% { border-right-color: transparent; } }
 .tap-cursor { position: absolute; left: 0; top: 0; pointer-events: none; z-index: 6; opacity: 0; transition: transform .65s cubic-bezier(.3,.7,.25,1), opacity .3s; }
 .tap-cursor.on { opacity: 1; }
-.tap-cursor svg { display: block; transform-origin: 20% 10%; transition: transform .1s; filter: drop-shadow(0 2px 3px rgba(23,58,69,.25)); }
-.tap-cursor.press svg { transform: scale(.82); }
+.tap-cursor svg { display: block; }
+.tap-cursor.press svg { opacity: .6; }
 .tap-ring { position: absolute; width: 30px; height: 30px; margin: -15px 0 0 -15px; border-radius: 50%; border: 2px solid var(--accent); pointer-events: none; z-index: 5; animation: tapring .5s ease-out forwards; }
 @keyframes tapring { from { transform: scale(.3); opacity: .9; } to { transform: scale(1.5); opacity: 0; } }
 
@@ -606,3 +606,6 @@ video.demo { width: 100%; border-radius: 10px; border: 1px solid var(--line); ba
 .decision .d-r { border-left: 1px solid #D5DDE0; }
 .decision .d-l b { color: var(--muted); }
 @media (max-width: 600px) { .decision { grid-template-columns: 1fr; } .decision .d-r { border-left: 0; border-top: 1px solid #D5DDE0; } }
+
+/* QuantivRisk laptop on white (for now) */
+.ov-media.laptop, .f-peek:has(img[src*="qr-laptop"]) { background: #FFFFFF; }
